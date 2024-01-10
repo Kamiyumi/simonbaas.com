@@ -1,4 +1,6 @@
 Welcome to My Portfolio Repository!
+
+
 👋 Hello! I'm Simon, a dedicated student of software development and an avid creator of technology. In this repository, you will discover a variety of projects that I have developed during my academic career and in my personal time. Each folder here is a snapshot of my journey, challenges, and triumphs in coding and software design.
 
 Repository Structure
