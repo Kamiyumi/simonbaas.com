@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1092.0" style="-fx-background-color: #000d2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.lu.ics.controllers.ServiceController">
+    <children>
+      <ImageView fitHeight="83.0" fitWidth="89.0" layoutX="828.0" layoutY="505.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../StayLogo.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="83.0" fitWidth="89.0" layoutX="169.0" layoutY="468.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../StayLogo.gif" />
+         </image>
+      </ImageView>
+        <Pane layoutY="22.0" prefHeight="304.0" prefWidth="1092.0" style="-fx-background-color: #F5F5F5;">
+            <children>
+                <TableView fx:id="serviceTableView" layoutY="-20.0" prefHeight="457.0" prefWidth="1092.0" stylesheets="@../css/tableView.css">
+                    <columns>
+                        <!-- Customize the column IDs and text as per your service data structure -->
+                        <TableColumn fx:id="columnServiceID" prefWidth="154.8571232386994" text="Vehicle Name" />
+                        <TableColumn fx:id="columnServiceProvider" prefWidth="191.42857360839844" text="Service Provider (Workshop)" />
+                        <TableColumn fx:id="columnServiceDate" prefWidth="98.2857666015625" text="Service Date" />
+                        <TableColumn fx:id="columnServiceType" prefWidth="218.28564453125" text="Service Description" />
+                        <TableColumn fx:id="columnServiceCost" prefWidth="85.1429443359375" text="Cost" />
+                  <TableColumn fx:id="columnServiceStatus" prefWidth="113.7142333984375" text="Status" />
+                  <TableColumn fx:id="columnPartsReplaced" prefWidth="138.857177734375" text="Parts Replaced" />
+                  <TableColumn fx:id="columnPartsReplacedCount" prefWidth="90.28570556640625" text="#Parts" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+        <Label fx:id="serviceInfoLabel" layoutX="610.0" layoutY="467.0" prefHeight="86.0" prefWidth="301.0" textFill="WHITE" wrapText="true" />
+        <Button fx:id="buttonAddService" layoutX="325.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleButtonServiceAddAction" prefHeight="25.0" prefWidth="160.0" style="-fx-background-color: #f5f5f5;" text="Add Service Activity">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+      <DatePicker fx:id="datePicker" layoutX="6.0" layoutY="529.0" prefHeight="25.0" prefWidth="150.0" promptText="Date Of Service">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></DatePicker>
+      <ComboBox fx:id="comboBoxWorkshop" layoutX="6.0" layoutY="498.0" prefWidth="150.0" promptText="Select Workshop:" style="-fx-background-color: #f5f5f5;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <TextField fx:id="textFieldServiceCost" layoutX="325.0" layoutY="497.0" prefHeight="25.0" prefWidth="160.0" promptText="Enter Service Cost:" />
+      <TextField fx:id="textFieldPartsReplaced" layoutX="325.0" layoutY="466.0" prefHeight="25.0" prefWidth="160.0" promptText="*Parts Replaced:" />
+      <Label layoutX="492.0" layoutY="458.0" prefHeight="42.0" prefWidth="107.0" text="*Comma separated! (Wheel, Door)" textFill="WHITE" wrapText="true" />
+      <TextField fx:id="textFieldServiceStatus" layoutX="166.0" layoutY="529.0" prefHeight="25.0" prefWidth="150.0" promptText="Status:" />
+      <TextArea fx:id="textAreaServiceDescription" layoutX="166.0" layoutY="466.0" prefHeight="61.0" prefWidth="150.0" promptText="Service Description:" />
+      <ComboBox fx:id="comboBoxVehicle" layoutX="6.0" layoutY="466.0" prefWidth="150.0" promptText="Select Vehicle:" style="-fx-background-color: #f5f5f5;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button fx:id="buttonHistory" layoutX="926.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleButtonViewHistoryAction" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #f5f5f5;" text="View Full History">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttonRemoveActivity" layoutX="1013.0" layoutY="497.0" mnemonicParsing="false" onAction="#handleButtonRemoveActivityAction" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #f5f5f5;" text="Remove">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="buttonEditActivity" layoutX="926.0" layoutY="497.0" mnemonicParsing="false" onAction="#handleButtonEditActivityAction" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #f5f5f5;" text="Edit">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="textFieldSearchService" layoutX="926.0" layoutY="461.0" promptText="Filter By Name" stylesheets="@../css/textField.css" />
+      <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="1035.0" layoutY="453.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Glass.png" />
+         </image>
+      </ImageView>
+        <!-- Additional components here, customized for your service view -->
+        <!-- ... -->
+    </children>
+</AnchorPane>

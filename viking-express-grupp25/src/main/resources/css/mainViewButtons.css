@@ -1,0 +1,40 @@
+/* styles.css */
+
+/* Common styles for all buttons */
+.button {
+    -fx-min-width: 150px; /* Minimum width for all buttons */
+    -fx-min-height: 50px; /* Minimum height for all buttons */
+    -fx-background-color: #3498db; /* Default background color */
+    -fx-text-fill: white; /* Default text color */
+    -fx-font-size: 14px; /* Default font size */
+    -fx-font-family: "Arial"; /* Professional sans-serif font */
+    -fx-border-radius: 0px; /* No border radius for rectangular buttons */
+    -fx-cursor: pointer; /* Cursor style */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-background-radius: 0px; /* No background radius for rectangular buttons */
+    -fx-background-insets: 0; /* Background insets */
+    -fx-transition: opacity 0.3s; /* Transition for opacity on hover */
+    
+    /* Standard CSS properties for compatibility */
+    min-width: 150px;
+    min-height: 50px;
+    background-color: #3498db;
+    color: white;
+    font-size: 18px;
+    font-family: "Calibri";
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: opacity 0.3s;
+}
+
+/* Button hover effect */
+.button:hover {
+    -fx-opacity: 0.8; /* Slight fade effect on hover */
+    
+    /* Standard CSS properties for compatibility */
+    opacity: 0.8;
+}
+
+
+

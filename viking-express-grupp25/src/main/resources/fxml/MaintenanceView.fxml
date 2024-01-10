@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="1092.0" style="-fx-background-color: #000d2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.lu.ics.controllers.MaintenanceController">
+    <children>
+      <ImageView fitHeight="83.0" fitWidth="89.0" layoutX="157.0" layoutY="483.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../StayLogo.gif" />
+         </image>
+      </ImageView>
+        <Pane layoutY="22.0" prefHeight="304.0" prefWidth="1092.0" style="-fx-background-color: #F5F5F5;">
+            <children>
+                <TableView fx:id="maintenanceTableView" layoutY="-21.0" prefHeight="453.0" prefWidth="1092.0" stylesheets="@../css/tableView.css">
+                    <columns>
+                        <TableColumn fx:id="columnVin" prefWidth="214.85711884498596" text="#VIN" />
+                        <TableColumn fx:id="columnName" prefWidth="205.71438598632812" text="Car Name" />
+                        <TableColumn fx:id="columnWorkshopAddress" prefWidth="124.0" text="Workshop Address" />
+                        <TableColumn fx:id="columnResponsibleWorkshop" prefWidth="337.7142333984375" text="Responsible Workshop" />
+                        <TableColumn fx:id="columnScheduledMaintenance" prefWidth="209.0" text="Scheduled Maintence" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+        <Label fx:id="maintenanceInfoLabel" layoutX="483.0" layoutY="461.0" prefHeight="92.0" prefWidth="429.0" textFill="WHITE" wrapText="true" />
+      <Button fx:id="buttonAddMaintenance" layoutX="171.0" layoutY="530.0" mnemonicParsing="false" onAction="#handleButtonMaintenanceAddAction" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #F5F5F5;" text="Add new maintenance">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ComboBox fx:id="comboBoxStoredInVehicle" layoutX="172.0" layoutY="463.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Vehicle" style="-fx-background-color: #F5F5F5;" visibleRowCount="100">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button fx:id="buttonRemoveMaintenance" layoutX="1010.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleButtonMaintenanceRemoveAction" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #F5F5F5;" text="Remove">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="textFieldMaintenanceSearch" layoutX="927.0" layoutY="460.0" promptText="Filter by VIN" stylesheets="@../css/textField.css" />
+      <Button fx:id="buttonEditMaintenance" layoutX="927.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleButtonMaintenanceEditAction" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #F5F5f5;" text="Edit">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ComboBox fx:id="comboBoxWorkshop" layoutX="15.0" layoutY="463.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Workshop" style="-fx-background-color: #F5f5f5;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <DatePicker fx:id="datePicker" layoutX="329.0" layoutY="463.0" prefHeight="25.0" prefWidth="149.0" promptText="Select date" style="-fx-background-color: #f5f5f5;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></DatePicker>
+      <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="1037.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Glass.png" />
+         </image>
+      </ImageView>
+      <Line endX="-504.4285583496094" endY="-26.857147216796875" layoutX="908.0" layoutY="515.0" startX="-504.4285583496094" startY="27.28570556640625" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-671.4285888671875" endY="-36.857147216796875" layoutX="918.0" layoutY="525.0" startX="-671.4285888671875" startY="5.85711669921875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-838.4285888671875" endY="-46.857147216796875" layoutX="928.0" layoutY="535.0" startX="-839.0499267578125" startY="6.74993896484375" stroke="WHITE" strokeWidth="3.0" />
+      <Label layoutX="949.0" layoutY="532.0" prefHeight="17.0" prefWidth="106.0" text="Select a vehicle to:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Line endX="-544.28564453125" endY="2.0" layoutX="1588.0" layoutY="530.0" startX="-544.28564453125" startY="-10.85711669921875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-506.28570556640625" endY="-3.85711669921875" layoutX="1467.0" layoutY="523.0" startX="-506.28570556640625" startY="9.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-767.0" endY="-2.4285888671875" layoutX="938.0" layoutY="545.0" startX="-848.2857666015625" startY="-2.4285888671875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-598.5714111328125" endY="-1.4285888671875" layoutX="1002.0" layoutY="544.0" startX="-681.857177734375" startY="-1.4285888671875" stroke="WHITE" strokeWidth="3.0" />
+    </children>
+</AnchorPane>

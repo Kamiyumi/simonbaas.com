@@ -1,0 +1,71 @@
+/* Styling for TableView */
+.table-view {
+    -fx-background-color: white; /* Solid white background for JavaFX */
+    background-color: white; /* Standard CSS fallback */
+    -fx-border-color: lightgray; /* Border color for both horizontal and vertical lines */
+    border-color: lightgray; /* Standard CSS fallback */
+    -fx-border-width: 1px 0px; /* Vertical borders are 1px and horizontal borders are 0px */
+    border-width: 1px 0px; /* Standard CSS fallback */
+    -fx-border-style: solid;
+    border-style: solid; /* Standard CSS fallback */
+    -fx-table-cell-border-color: lightgray; /* Color for the cell borders */
+    -fx-vertical-cell-border-width: 1px; /* Vertical cell border width to be more visible */
+    -fx-horizontal-cell-border-width: 0px; /* Horizontal cell border width to be minimal */
+    -fx-border-radius: 0;
+    border-radius: 0; /* Standard CSS fallback */
+    -fx-padding: 0;
+    padding: 0; /* Standard CSS fallback */
+}
+
+/* Styling for TableView column headers */
+.table-view .column-header {
+    -fx-background-color: rgb(189, 188, 188); /* Set header background color to white */
+    background-color: white; /* Standard CSS fallback */
+    -fx-text-fill: black; /* Text color for header */
+    color: black; /* Standard CSS fallback */
+    -fx-font-size: 12px;
+    font-size: 12px; /* Standard CSS fallback */
+    -fx-padding: 5px;
+    padding: 5px; /* Standard CSS fallback */
+    -fx-border-width: 0px; /* No border width for the header to remove additional space */
+    border-width: 0px; /* Standard CSS fallback */
+}
+
+/* Styling for TableView rows */
+.table-view .table-row-cell {
+    -fx-border-color: lightgray; /* Border color for rows */
+    border-color: lightgray; /* Standard CSS fallback */
+    -fx-padding: 0; /* Reduced padding for less space between cells */
+    padding: 0; /* Standard CSS fallback */
+    -fx-border-width: 0px; /* No border width for rows to remove additional space */
+    border-width: 0px; /* Standard CSS fallback */
+}
+
+/* Styling for selected rows */
+.table-view .table-row-cell:selected {
+    -fx-background-color: lightblue;
+    background-color: lightblue; /* Standard CSS fallback */
+    -fx-text-fill: white;
+    color: white; /* Standard CSS fallback */
+}
+
+/* Styling for TableView cell text */
+.table-view .table-cell {
+    -fx-text-fill: black;
+    color: black; /* Standard CSS fallback */
+    -fx-font-size: 12px;
+    font-size: 12px; /* Standard CSS fallback */
+    font-family: Arial, sans-serif;
+    -fx-padding: 0; /* No padding for cells to make horizontal lines closer */
+    padding: 0; /* Standard CSS fallback */
+    -fx-border-width: 0px 1px; /* No horizontal border and visible vertical border */
+    border-width: 0px 1px; /* Standard CSS fallback */
+}
+
+/* Remove cell border between columns */
+.table-row-cell .table-cell {
+    -fx-border-color: lightgray; /* Border color for cells */
+    border-color: lightgray; /* Standard CSS fallback */
+    -fx-border-width: 0px; /* No border width for cells to remove additional space */
+    border-width: 0px; /* Standard CSS fallback */
+}

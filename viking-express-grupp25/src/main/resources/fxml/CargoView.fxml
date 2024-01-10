@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="1092.0" style="-fx-background-color: #000d2f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.lu.ics.controllers.CargoController">
+    <children>
+      <ImageView fitHeight="83.0" fitWidth="89.0" layoutX="904.0" layoutY="522.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../StayLogo.gif" />
+         </image>
+      </ImageView>
+        <Pane layoutY="22.0" prefHeight="304.0" prefWidth="1092.0" style="-fx-background-color: #F5F5F5;">
+            <children>
+                <TableView fx:id="cargoTableView" layoutY="-21.0" prefHeight="459.0" prefWidth="1092.0" style="-fx-background-color: #F5F5F5;" stylesheets="@../css/tableView.css">
+                    <columns>
+                        <TableColumn fx:id="columnCargoName" prefWidth="214.85711884498596" text="Cargo Name" />
+                        <TableColumn fx:id="columnEan" prefWidth="205.71438598632812" text="#EAN" />
+                        <TableColumn fx:id="columnCargoWeight" prefWidth="117.71434020996094" text="Cargo Weight" />
+                        <TableColumn fx:id="columnCargoAmount" prefWidth="162.28564453125" text="Cargo Amount" />
+                        <TableColumn fx:id="columnCargoTotalWeight" prefWidth="148.0" text="Total Weight" />
+                  <TableColumn fx:id="columnCargoStoredInVehicle" prefWidth="241.142822265625" text="Stored in Vehicle:" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+        <Label fx:id="cargoInfoLabel" layoutX="352.0" layoutY="463.0" prefHeight="91.0" prefWidth="565.0" textFill="WHITE" wrapText="true" />
+      <TextField fx:id="textFieldCargoName" layoutX="6.0" layoutY="463.0" prefHeight="16.0" prefWidth="149.0" promptText="Enter Cargo Name" />
+      <TextField fx:id="textFieldEan" layoutX="6.0" layoutY="495.0" promptText="Enter #EAN" />
+      <TextField fx:id="textFieldCargoWeight" layoutX="6.0" layoutY="529.0" promptText="Enter Cargo Weight" />
+      <TextField fx:id="textFieldCargoAmount" layoutX="164.0" layoutY="463.0" promptText="Enter Cargo Amount" />
+      <Button fx:id="buttonAddCargo" layoutX="163.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleButtonCargoAddAction" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #F5F5F5;" text="Add cargo">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ComboBox fx:id="comboBoxStoredInVehicle" layoutX="163.0" layoutY="495.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Vehicle" style="-fx-background-color: #F5F5F5;" visibleRowCount="100">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button fx:id="buttonRemoveCargo" layoutX="1023.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleButtonCargoRemoveAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #F5F5F5;" text="Remove">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="textFieldCargoSearch" layoutX="934.0" layoutY="463.0" minWidth="130.0" prefWidth="130.0" promptText="Filter by EAN" stylesheets="@../css/textField.css" />
+      <Button fx:id="buttonEditCargo" layoutX="934.0" layoutY="501.0" mnemonicParsing="false" onAction="#handleButtonCargoEditAction" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #F5F5f5;" text="Edit">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="54.0" fitWidth="52.0" layoutX="1040.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Glass.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="958.0" layoutY="541.0" prefHeight="17.0" prefWidth="106.0" text="Select a vehicle to:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Line endX="-544.28564453125" endY="2.0" layoutX="1600.0" layoutY="538.0" startX="-544.28564453125" startY="-10.85711669921875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-506.28570556640625" endY="-3.85711669921875" layoutX="1474.0" layoutY="532.0" startX="-506.28570556640625" startY="9.0" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-1036.428466796875" endY="-74.57144165039062" layoutX="1350.0" layoutY="550.0" startX="-1011.1428833007812" startY="-74.57144165039062" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-1019.6428833007812" endY="-85.07144165039062" layoutX="1360.0" layoutY="561.0" startX="-1019.6428833007812" startY="-19.857177734375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-1031.142822265625" endY="-30.78570556640625" layoutX="1371.0" layoutY="573.0" startX="-1057.857177734375" startY="-30.4285888671875" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-1019.6428833007812" endY="-85.07144165039062" layoutX="1099.0" layoutY="561.0" startX="-1019.6428833007812" startY="-19.857177734375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-1031.142822265625" endY="-63.428558349609375" layoutX="1370.0" layoutY="571.0" startX="-1057.857177734375" startY="-63.428558349609375" stroke="WHITE" strokeWidth="3.0" />
+      <Line endX="-945.5714721679688" endY="-29.4285888671875" layoutX="1109.0" layoutY="571.0" startX="-954.4285278320312" startY="-29.4285888671875" stroke="WHITE" strokeWidth="3.0" />
+        <!-- Additional UI components similar to VehicleController's FXML can be added here -->
+    </children>
+</AnchorPane>
