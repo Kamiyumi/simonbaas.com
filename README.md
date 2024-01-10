@@ -1,36 +1,54 @@
-Welcome to My Portfolio Repository!
+---
 
+# Welcome to My Portfolio Repository!
 
-👋 Hello! I'm Simon, a dedicated student of software development and an avid creator of technology.
-In this repository, you will discover a variety of projects that I have developed during my academic career and in my personal time. Each folder here is a snapshot of my journey, challenges, and triumphs in coding and software design.
+---
 
-Repository Structure
-Within this repository, you'll find each project neatly organized into its own directory. School projects are sorted by the course or project title, offering a glimpse into my educational progression. Personal projects have their dedicated space where I explore ideas independently, each reflecting a piece of my individuality as a developer.
+👋 **Hello! I'm Simon,**  
+A passionate student of software development and an enthusiast in creating innovative technology solutions. This repository is a showcase of my projects, each reflecting a milestone in my journey through coding and software design.
 
-Featured Projects
+---
 
-VikingExpress Fleet Logistics Application
+## Repository Structure
 
-🚚 VikingExpress Fleet Logistics: Designed as a robust logistics platform, the VikingExpress application is aimed at optimizing fleet operations for transportation companies. This project showcases my ability to engineer solutions that streamline processes, enhance efficiency, and improve user experiences in the logistics industry.
-Included is a rigorously created system documentation with a highly detailed and highly praised UML Class Diagram found in the System_Documentation.pdf file.
-This project was created as part of:
-[SYSA21/2023 @Lund University | Grade: A]
+Within this repository, you'll find:
+- **School Projects:** Categorized by course or title, these projects trace my academic voyage.
+- **Personal Projects:** A space for my independent explorations, representing my unique developer's signature.
 
-GigaBank Account Management
+---
 
-🏦 GigaBank Account Management: Developed to simplify banking operations, the GigaBank project is a testament to my skills in creating secure, reliable, and user-friendly account management software. This piece of work demonstrates my proficiency in developing applications that require meticulous attention to security, data integrity, and a seamless user interface. 
-This project was created as part of:
-[SYSA21/2023 @Lund University | Grade: A].
+## Featured Projects
 
-Continuous Evolution
+### 🚚 VikingExpress Fleet Logistics Application
+**VikingExpress Fleet Logistics** is not just a project; it's a comprehensive platform designed to enhance the efficiency of fleet operations. It exhibits my problem-solving prowess and my commitment to crafting seamless user experiences. Notable within this project is the meticulously crafted UML Class Diagram, which has been highly commended.  
+**Created for:** SYSA21/2023 @Lund University | **Grade:** A
 
-I'm constantly expanding this repository with new projects and updates to existing ones. Keep an eye on this space for more insights into my capabilities and growth as a developer.
+### 🏦 GigaBank Account Management
+**GigaBank Account Management** stands as a testament to my dedication to security and user-centric design in software development. This project underscores my expertise in creating reliable account management systems that uphold the utmost data integrity.  
+**Created for:** SYSA21/2023 @Lund University | **Grade:** A
 
-Collaboration and Feedback
+---
 
-I believe in the power of community and constructive feedback. If any of my projects pique your interest, or if you have any suggestions or questions, don't hesitate to reach out or contribute to the repository.
+## Continuous Evolution
 
-Appreciation
+My repository is ever-growing, with frequent updates and additions. Stay tuned to witness my continuous development as a software engineer.
 
-Thank you for taking the time to explore my work. Your support and interest are what drive me to keep pushing the boundaries of what I can create. Enjoy browsing through my portfolio!
+---
 
+## Collaboration and Feedback
+
+I firmly believe in the synergy of community and feedback. If my work sparks an interest, or if you have any insights or inquiries, I welcome you to reach out and engage with my projects.
+
+---
+
+## Appreciation
+
+Your time spent exploring my portfolio is deeply appreciated. It's your support and interest that fuels my drive for innovation. I hope you find inspiration in my work.
+
+---
+
+Enjoy your journey through my portfolio!
+
+---
+
+This structured format uses visual cues like bold headings, emojis, and separators to organize the content and make it easy to scan. It's formatted to be engaging and to draw attention to key areas like project titles and important achievements.
