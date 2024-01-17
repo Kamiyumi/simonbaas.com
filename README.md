@@ -50,5 +50,3 @@ Your time spent exploring my portfolio is deeply appreciated. It's your support 
 Enjoy your journey through my portfolio!
 
 ---
-
-This structured format uses visual cues like bold headings, emojis, and separators to organize the content and make it easy to scan. It's formatted to be engaging and to draw attention to key areas like project titles and important achievements.
