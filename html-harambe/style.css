@@ -1,0 +1,201 @@
+
+
+:root {
+    --background-color: black;
+    /* Black color */
+    --text-color: hsl(0, 0%, 100%);
+    /* White color */
+    --primary-color: rgb(63, 161, 251);
+    /* Primary color */
+    --secondary-color: rgba(252, 70, 168, 1);
+    /* Secondary color */
+    --button-background: #FCFCFD;
+    /* Button background */
+    --button-text-color: #36395A;
+    /* Button text color */
+    --button-shadow-color-1: rgba(45, 35, 66, 0.4);
+    /* Button shadow color 1 */
+    --button-shadow-color-2: rgba(45, 35, 66, 0.3);
+    /* Button shadow color 2 */
+    --button-hover-shadow: #2b2b38;
+    /* Button hover shadow color */
+    --button-focus-shadow: #D6D6E7;
+    /* Button focus shadow color */
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center
+}
+
+li {
+    background-image: url(arrow.gif);
+    background-repeat: no-repeat;
+    background-position: 100% .4em;
+    padding-right: .6em;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.top-colored-section {
+    background-color: #884170;
+    /* Replace with whatever color you want */
+    padding: 10px;
+    /* Add some padding if needed */
+}
+
+.bottom-colored-section {
+    background-color: #884170;
+    /* Replace with whatever color you want */
+    padding: 10px;
+    /* Add some padding if needed */
+}
+
+
+body {
+    margin: 0;
+    font-family: "Exo 2", sans-serif;
+    background: linear-gradient(142deg,
+            var(--primary-color) 0%,
+            var(--secondary-color) 100%);
+}
+
+/*<button class="button-30" role="button">Button 30</button>
+
+/* CSS */
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #2b2b38 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.wrapper {
+    display: grid;
+    place-content: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 10vh;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(1.5rem, 1rem + 18vw, 15rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.wrapper>div {
+    grid-area: 1/1/-1/-1;
+}
+
+.top {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+}
+
+.bottom {
+    clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: -webkit-linear-gradient(177deg, black 53%, var(--text-color) 65%);
+    background: linear-gradient(177deg, var(--background-color) 53%, var(--text-color) 65%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transform: translateX(-0.02em);
+}
+
+img {
+    --s: 10px;
+    /* Control the size */
+    padding: var(--s);
+    border: calc(2*var(--s)) solid transparent;
+    outline: 1px solid transparent;
+    outline-offset: calc(-1*var(--s));
+    background: conic-gradient(from 90deg at 1px 1px, transparent 25%, #000 0);
+    border-radius: 50%;
+    transition: outline-color 0.3s, background 0.3s;
+}
+
+img:hover {
+    outline-color: #fff;
+    background: conic-gradient(from 90deg at 1px 1px, #fff0 25%, #ae5c5c 0);
+}
+
+/* make the image a tombstone */
+img {
+    border-radius: 50%;
+}
+/* make the image fade on focus */
+
+a,
+a:visited {
+    display: inline-block;
+    /* or 'inline' depending on layout */
+    padding: 0;
+    margin: 0;
+}
+
+.centered-image {
+    
+    margin: 0 auto;
+    /* Center the block element horizontally */
+    text-align: center;
+    /* Center the content (image) inside the anchor */
+}
+
+
+
+
