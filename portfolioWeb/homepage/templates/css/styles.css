@@ -1,0 +1,293 @@
+body,
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.navbar {
+    position: relative;
+    /* or 'fixed' or 'absolute' depending on your layout */
+    z-index: 1100;
+    /* Higher than the z-index of .container2 */
+    /* ... other styles ... */
+}
+
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+/* General image container styles for responsiveness */
+.image-container,
+.image-container2,
+.image-container-add-person,
+.image-container-add-money {
+    width: 80vw;
+    /* Adjust the width in viewport width units */
+    max-width: 768px;
+    /* Keep the max-width if you want a limit */
+    height: auto;
+    /* Make the height automatic based on content */
+    margin: auto;
+    /* This should center the container */
+    position: relative;
+    overflow: hidden;
+}
+
+/* General image styles for responsiveness */
+.image-container img,
+.image-container2 img,
+.image-container-add-person img,
+.image-container-add-money img {
+    width: 100%;
+    /* Full width of the container */
+    height: auto;
+    /* Height will adjust automatically */
+    object-fit: contain;
+    /* Keeps the image fully visible */
+}
+
+/* Container for main content */
+.container {
+    display: flex;
+    flex-direction: row;
+    /* Aligns children in a row */
+    justify-content: center;
+    /* Centers children horizontally in the container */
+    align-items: flex-start;
+    /* Aligns children at the start of the container vertically */
+    flex-wrap: wrap;
+    /* Allows items to wrap as needed */
+}
+
+/* Styles for individual columns */
+.column,
+.column-img,
+.column-text {
+    flex: 1;
+    /* Each column takes up equal space */
+    padding: 15px;
+    /* Some padding around the content */
+}
+
+/* Sticky header container */
+.container2 {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* High enough to stay above other content */
+    background-color: white;
+    /* Or any color that fits your design */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Optional, for a subtle shadow */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .column,
+    .column-img,
+    .column-text {
+        width: 100%;
+        /* Full width on smaller screens */
+    }
+
+    .image-container,
+    .image-container2,
+    .image-container-add-person,
+    .image-container-add-money {
+        width: 90vw;
+        /* Adjust for smaller screens */
+        max-width: 100%;
+        /* Allows the image container to fill the width of the screen */
+    }
+}
+
+
+
+.container2 {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    /* Or any color that fits your design */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Optional, for a subtle shadow */
+}
+
+h1 {
+    font-size: 120px;
+    text-transform: uppercase;
+
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 0.8rem;
+    color: rgb(0, 0, 0);
+    outline: none;
+    text-align: center;
+}
+
+h1:hover {
+    font-variation-settings: "wght" 582;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 150%;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    letter-spacing: .5px;
+}
+
+
+.image-container2 {
+    position: relative;
+    display: inline-table
+        /* images inside the same size */
+
+}
+
+.image-container2 img {
+    display: block;
+    width: 500px;
+    height: auto;
+}
+
+.image-container-add-person {
+    width: 40vh;
+    height: 40vh;
+    margin: auto;
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.image-container-add-person img {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container-add-person .overlay-text {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.696);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container-add-person:hover .overlay-text {
+    opacity: 1;
+}
+
+.image-container-add-money {
+    width: auto;
+    height: auto;
+    margin: auto;
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.image-container-add-money img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container-add-money .overlay-text {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding: top 50px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.696);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container-add-money:hover .overlay-text {
+    opacity: 1;
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    /* Set the width to cover the entire parent container (image) */
+    height: 100%;
+    /* Set the height to cover the entire parent container (image) */
+    background-color: rgba(0, 0, 0, 0.696);
+    color: white;
+
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container2:hover .overlay-text {
+    opacity: 1;
+}
+
+p1 {
+
+    font-size: 42px;
+    font-family: Lucida Handwriting;
+}
+
+.p2 {
+    transition: all 0.7s ease;
+}
+
+.p2:hover {
+    color: rgb(126, 66, 66);
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.p3 {
+    font-size: 42px;
+    font-family: Lucida Handwriting;
+    transition: all 1s ease;
+}
+
+.p3:hover {
+    color: rgb(126, 66, 66);
+    transform: scale3d(1.1, 1.1, 1.1);
+}

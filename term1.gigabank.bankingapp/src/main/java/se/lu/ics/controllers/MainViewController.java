@@ -211,8 +211,8 @@ public class MainViewController {
         // If all checks pass, proceed with adding the person
         Person person = new Person(identificationNumber, name, age);
         personRegister.addPerson(person);
-        observablePersonList.add(person); // Add to the observable list as well
-        tableView.refresh(); // To reflect the changes so the new person appears in the table.
+        observablePersonList.add(person); 
+        tableView.refresh(); 
 
         // Update TextArea
         textAreaAllPersonsInfo
