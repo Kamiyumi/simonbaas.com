@@ -40,7 +40,7 @@ function muteMusic() {
 
 function downloadCv() {
     var link = document.createElement('a');
-    link.href = 'resources/SimonBaasCV.pdf'; // Correct path to the PDF
+    link.href = 'resources/gigaImages/cv.pdf'; // Correct path to the PDF
     link.download = 'SimonBaasCV.pdf';
     document.body.appendChild(link); // Append to body
     link.click(); // Trigger the click
