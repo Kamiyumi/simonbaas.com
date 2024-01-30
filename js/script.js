@@ -1,42 +1,36 @@
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+// General function to play a genre
+function playGenre(genre) {
+    const musicLists = {
+        jazz: ["resources/music/jazz1.mp3", "resources/music/jazz2.mp3", "resources/music/jazz3.mp3"],
+        country: ["resources/music/country1.mp3", "resources/music/country2.mp3", "resources/music/country3.mp3"],
+        pop: ["resources/music/pop1.mp3", "resources/music/pop2.mp3", "resources/music/pop3.mp3"]
+    };
+    var audioPlayer = document.getElementById('audio-element');
+    var state = loadMusicState();
+
+    audioPlayer.src = musicLists[genre][0];
+    audioPlayer.volume = state.volume || 0.3;
+    audioPlayer.currentTime = state.currentTime || 0; // Set the current time
+    audioPlayer.play();
+
+    saveMusicState({ genre: genre, volume: audioPlayer.volume, track: audioPlayer.src, currentTime: audioPlayer.currentTime, playing: true });
 }
 
-function playJazz() {
-    const jazzList = ["resources/music/jazz1.mp3", "resources/music/jazz2.mp3", "resources/music/jazz3.mp3"];
-    shuffleArray(jazzList);
-    var audioPlayer = document.getElementById('audio-element');
-    audioPlayer.volume = 0.3;
-    audioPlayer.src = jazzList[0];
-    audioPlayer.play();
-}
-
-function playCountry() {
-    const countryList = ["resources/music/country1.mp3", "resources/music/country2.mp3", "resources/music/country3.mp3"];
-    shuffleArray(countryList);
-    var audioPlayer = document.getElementById('audio-element');
-    audioPlayer.volume = 0.3;
-    audioPlayer.src = countryList[0];
-    audioPlayer.play();
-}
-
-function playPop() {
-    const popList = ["resources/music/pop1.mp3", "resources/music/pop2.mp3", "resources/music/pop3.mp3"];
-    shuffleArray(popList);
-    var audioPlayer = document.getElementById('audio-element');
-    audioPlayer.volume = 0.3;
-    audioPlayer.src = popList[0];d
-    audioPlayer.play();
-}
+// Specific genre functions
+function playJazz() { playGenre('jazz'); }
+function playCountry() { playGenre('country'); }
+function playPop() { playGenre('pop'); }
 
 function muteMusic() {
     var audioPlayer = document.getElementById('audio-element');
     audioPlayer.volume = 0;
-    alert("Music muted!");
+    audioPlayer.currentTime = 0; // Reset the song to the beginning
+    audioPlayer.play(); // Optional: Start playing the song again
+
+    const state = loadMusicState();
+    saveMusicState({ ...state, volume: 0, currentTime: 0 });
 }
+
 
 function downloadCv() {
     var link = document.createElement('a');
@@ -94,5 +88,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+function saveMusicState(state) {
+    var audioPlayer = document.getElementById('audio-element');
+    if (audioPlayer) {
+        state.currentTime = audioPlayer.currentTime;
+    }
+    localStorage.setItem('musicState', JSON.stringify(state));
+}
 
+function loadMusicState() {
+    const state = localStorage.getItem('musicState');
+    return state ? JSON.parse(state) : {};
+}
 
+// Adjusted window onload event to load and play music
+window.onload = function() {
+    var state = loadMusicState();
+    if (state && state.playing) {
+        playGenre(state.genre);
+    }
+    // Rest of your onload logic...
+};
+
+// Adjusted window onbeforeunload event to save music state
+window.onbeforeunload = function() {
+    var audioPlayer = document.getElementById('audio-element');
+    if (audioPlayer) {
+        var state = loadMusicState();
+        state.currentTime = audioPlayer.currentTime;
+        saveMusicState(state);
+    }
+};
+
+function playNextSong() {
+    const musicLists = {
+        jazz: ["resources/music/jazz1.mp3", "resources/music/jazz2.mp3", "resources/music/jazz3.mp3"],
+        country: ["resources/music/country1.mp3", "resources/music/country2.mp3", "resources/music/country3.mp3"],
+        pop: ["resources/music/pop1.mp3", "resources/music/pop2.mp3", "resources/music/pop3.mp3"]
+    };
+    
+    var state = loadMusicState();
+    if (state.genre && musicLists[state.genre]) {
+        var currentIndex = musicLists[state.genre].indexOf(state.track);
+        var nextIndex = (currentIndex + 1) % musicLists[state.genre].length; // Move to the next song, or loop back to the first song
+        playGenre(state.genre, nextIndex);
+    }
+}
