@@ -142,28 +142,31 @@ function loadVideo(videoPath) {
     }
 }
 
-function determineVideoFromURL() {
-    const pathname = window.location.pathname;
-    let videoPath;
+function getVideoPath() {
+    var videoPath = ""; // Default path, change as necessary
+    var pathname = window.location.pathname;
 
-    if (pathname.includes('index.html')) {
+    if (window.location.hostname === 'www.simonbaas.com' && (pathname === '/' || pathname === '/index.html')) {
         videoPath = "resources/gigaImages/video.mp4";
-    } else if (pathname.includes('vikingProject.html')) {
+    } else if (pathname.includes('/index.html')) {
+        videoPath = "resources/gigaImages/video.mp4";
+    } else if (pathname.includes('/vikingProject.html')) {
         videoPath = "resources/pexels_videos_2711276 (1080p).mp4";
-    } else if (pathname.includes('education.html')) {
+    } else if (pathname.includes('/education.html')) {
         videoPath = "resources/pexels_videos_2325093 (1080p).mp4";
-    } else if (pathname.includes('experience.html')) {
+    } else if (pathname.includes('/experience.html')) {
         videoPath = "resources/gigaImages/fall.mp4";
-    } else if (pathname.includes('certifications.html')) {
+    } else if (pathname.includes('/certifications.html')) {
         videoPath = "resources/pexels_videos_1793334 (1080p).mp4";
-    } else if (pathname.includes('gigaProject.html')) {
+    } else if (pathname.includes('/gigaProject.html')) {
         videoPath = "resources/pexels-tima-miroshnichenko-7579577 (1080p).mp4";
-    } else {
+    } else if (pathname.includes('/contact.html')) {
         videoPath = "resources/gigaImages/video.mp4";
     }
     
     return videoPath;
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const videoPath = determineVideoFromURL();
