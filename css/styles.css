@@ -394,6 +394,39 @@ p1 {
      transform: scale(1.05);
  }
 
+ .viking-container {
+    width:  auto;
+    /* Fixed width of the container */
+    height: auto;    /* Fixed height of the container */
+    margin: auto;
+    /* Center the container */
+    position: relative;
+    overflow: hidden;
+    /* Flexbox to center the image */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+/* Styles for Experience Images */
+.viking-container img {
+    max-width: 1200px;
+    /* Maximum width of the image */
+    max-height: 750px;
+    /* Maximum height of the image */
+    width: auto;
+    /* Width is automatic to maintain aspect ratio */
+    height: auto;
+    /* Height is automatic to maintain aspect ratio */
+    object-fit: contain;
+    /* Ensures the image is fully visible and maintains its aspect ratio */
+
+    
+}
+
+
+
 .container2 h1 {
     position: relative;
     /* Enables positioning of child elements */
@@ -412,3 +445,57 @@ p1 {
     margin-left: 5px;
     /* Adds space between the two images */
 }
+
+.container2 .image3,
+.container2 .image4 {
+    position: relative;
+    margin-bottom: auto;
+    /* add spacing between the images */
+    /* Allows for individual positioning */
+    top: -10px; 
+
+    
+}
+
+.viking-container {
+    position: relative;
+    /* Other styles as needed */
+}
+
+.viking-container .overlay-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.696);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* To indicate clickable */
+}
+
+.viking-container:hover .overlay-text {
+    opacity: 1;
+}
+
+.h3-stylish {
+    font-size: 24px;
+    /* Additional styles for a more stylish appearance */
+    font-weight: bold;
+    color: #333; /* Dark grey text color */
+    text-transform: uppercase; /* Make the text uppercase for more style */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+    margin-bottom: 20px; /* Space below the header */
+    padding: 10px; /* Padding around the text */
+    border-bottom: 2px solid #555; /* A solid line under the text for emphasis */
+    display: inline-block; /* Allows the border-bottom to fit the content width */
+}
+
+
+

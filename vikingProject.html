@@ -1,35 +1,156 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-                integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-                crossorigin="anonymous">
-        <link rel="icon" type="image/x-icon" href="resources/port.ico">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-                crossorigin="anonymous"></script>
-        <script src='js/script.js'></script>
-        <link href="css/styles.css" rel="stylesheet">
-        <title>Portfolio | VikingExpress</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="templates/resources/port.ico">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src='js/script.js'></script>
+    <link href="css/styles.css" rel="stylesheet">
+    <title>Portfolio | VikingExpress</title>
 </head>
 
 <body>
-        <div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder"></div>
+    <div class="container2">
+        <h1 contenteditable>VikingExpress<sup>&#8482;</sup>- <i>Powered by:</i>
+            <img src="resources/gigaImages/JavaLang.png" alt="Logo" class="image1" height="64px" width="96px">
+            <img src="resources/gigaImages/JavaFX.png" alt="Logo" class="image2" height="64px" width="64px">
+
+        </h1>
+    </div>
+    <div class="container">
+        <!-- First Image-Text Pair -->
+        <div class="column column-img">
+            <div class="viking-container">
+                <!-- Placeholder Image Link -->
+                <img src="resources\gigaImages\viking.png" alt="Image Description for VikingExpress Feature 1">
+                <a href="term1.vikingexpress.logisticsapp\System Documentation - Viking Express.pdf">
+                    <h3><b>INFO</b></h3>
+                </a>
+
+            </div>
+        </div>
+        <div class=" column column-text">
+
+            <h2>Application Introduction</h2>
+            <p>
+                The VikingExpress Logistics Management System exemplifies how object-oriented programming can
+                create streamlined
+                solutions for complex operational needs. At its core is a sophisticated Vehicle Register that
+                enforces key
+                safety and efficiency standards through rigorous tracking and operational rules.
+            </p>
+            <p>
+                An advanced GUI enhances user interaction, providing a seamless interface for managing the
+                vehicle fleet and
+                cargo, supported by the MVC architectural pattern, which promotes a clean separation of concerns
+                for improved
+                scalability and maintainability.
+            </p>
+            <p>
+                This system encapsulates a harmonious blend of technical acumen with a focus on user experience,
+                symbolizing a
+                comprehensive approach to modern logistics management.
+            </p>
+            <p>
+                <i>Disclaimer: This project serves as a demonstration of high-level software engineering
+                    tailored for
+                    VikingExpress's logistical needs. It was developed within the "IS Project" sub-course at
+                    Lund
+                    University,
+                    contributing to the Bachelor of Information Systems program.</i>
+            </p>
+            <p>
+                <i>For more details on the bachelor's program, please visit:
+                    <a href="education.html">Degree Information</a>.
+                </i>
+            </p>
+
+            </p>
+            <p class="p3, h3-stylish"><b>Grade: A</b></p1>
+        </div>
 
 
+    </div>
+    </div>
 
+    <div class="container">
+        <!-- Second Image-Text Pair -->
 
+        <div class="column column-text">
+            <div>
+                <h2>System Architecture Overview: Viking Express Logistics Management System</h2>
+                <p>
+                    The Viking Express Logistics Management System is engineered using a modular JavaFX
+                    architecture, ensuring a
+                    responsive and dynamic user interface. At its core, the system leverages a robust MVC
+                    (Model-View-Controller)
+                    pattern:
+                </p>
+                <ul>
+                    <li><strong>Model:</strong> Centralized data models like <code>SharedVehicleDataModel</code>
+                        provide cohesive
+                        data management and state control across various system components.</li>
+                    <li><strong>View:</strong> The GUI, structured through FXML files, presents data in a
+                        user-friendly format, with
+                        real-time updates facilitated by bindings to the underlying models.</li>
+                    <li><strong>Controller:</strong> Controllers such as <code>MainViewController</code>,
+                        <code>VehicleController</code>, and <code>CargoController</code> handle user input and
+                        system logic,
+                        orchestrating the flow between the view and the model.
+                    </li>
+                </ul>
+                <p>
+                    The architecture promotes separation of concerns, allowing for independent updates and
+                    maintenance of each
+                    component. This separation enhances scalability, making the system adaptable to evolving
+                    logistical needs.
+                </p>
+                <h3>Component Interaction:</h3>
+                <p>
+                    Interaction between components is streamlined through event-driven programming, where
+                    controllers respond to
+                    user actions, query or update the models, and refresh the views. This results in a fluid
+                    experience as users
+                    navigate through vehicle tracking, cargo management, and maintenance scheduling functionalities.
+                </p>
+                <p>
+                    Additional layers, such as service and repository patterns, abstract the business logic and data
+                    access, making
+                    the system resilient and maintainable. Overall, the Viking Express system architecture is a
+                    blueprint for
+                    efficient logistics management solutions.
+                </p>
+            </div>
 
+            <div class="column column-img">
+                <div class="viking-container img">
+                    <a href="https://gist.github.com/Kamiyumi/2d8330bc3b0c744a87219b8f486bf324" target="_blank">
+                        <div class="overlay-text">
+                            <b>Click to view Source Code</b>
+                        </div>
+                        <img src="resources/gigaImages/vikingExpress1.png"
+                            alt="Image Description for VikingExpress Feature 2">
+                    </a>
+                </div>
+            </div>
 
+            <hr>
+            <br>
+        </div>
+    </div>
 
+    <!-- Additional sections can be added here following the same structure -->
 
-        <div id="audio-bar"></div>
-        <script>
-        </script>
+    <div id="audio-bar"></div>
+    <script>
+    </script>
 </body>
 
 </html>
