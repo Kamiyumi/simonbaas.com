@@ -548,7 +548,13 @@ p1 {
 
 
 
-
+@media screen and (max-width: 500px) {
+    .video-container {
+        height: 0%;
+        /* Single column layout on smaller screens */
+    }
+    
+}a
 
 .container2 h1 {
     font-size: calc(12px + 2.5vw);

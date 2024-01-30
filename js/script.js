@@ -134,3 +134,39 @@ function playNextSong() {
         playGenre(state.genre, nextIndex);
     }
 }
+function loadVideo(videoPath) {
+    var videoSource = document.getElementById('videoSource');
+
+    if (window.innerWidth > 500) { // Example breakpoint for mobile devices
+        videoSource.src = videoPath;
+        document.getElementById('myVideo').load();
+    }
+}
+
+function determineVideoFromURL() {
+    const pathname = window.location.pathname;
+    let videoPath;
+
+    if (pathname.includes('index.html')) {
+        videoPath = "resources/gigaImages/video.mp4";
+    } else if (pathname.includes('vikingProject.html')) {
+        videoPath = "resources/pexels_videos_2711276 (1080p).mp4";
+    } else if (pathname.includes('education.html')) {
+        videoPath = "resources/pexels_videos_2325093 (1080p).mp4";
+    } else if (pathname.includes('experience.html')) {
+        videoPath = "resources/gigaImages/fall.mp4";
+    } else if (pathname.includes('certifications.html')) {
+        videoPath = "resources/pexels_videos_1793334 (1080p).mp4";
+    } else if (pathname.includes('gigaProject.html')) {
+        videoPath = "resources/pexels-tima-miroshnichenko-7579577 (1080p).mp4";
+    }
+    
+    return videoPath;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const videoPath = determineVideoFromURL();
+    if (videoPath) {
+        loadVideo(videoPath);
+    }
+}); 
