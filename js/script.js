@@ -180,20 +180,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.body.addEventListener('mouseout', function(event) {
-        if (event.target.closest('.navbar-nav .nav-link video')) {
-            
+        const video = event.target.closest('.navbar-nav .nav-link video');
+        if (video) {
+            video.currentTime = 0; // Reset the video to start
+            video.pause();
         }
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const videos = document.querySelectorAll('.navbar-nav .nav-link video');
-    videos.forEach(video => {
-        video.addEventListener('ended', function() {
-            this.currentTime = 0; // Optional: Reset the video to start
-            // Optionally pause or do other actions when the video ends
-        });
-    });
-});
+
 
  
