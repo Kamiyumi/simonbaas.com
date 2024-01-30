@@ -158,6 +158,8 @@ function determineVideoFromURL() {
         videoPath = "resources/pexels_videos_1793334 (1080p).mp4";
     } else if (pathname.includes('gigaProject.html')) {
         videoPath = "resources/pexels-tima-miroshnichenko-7579577 (1080p).mp4";
+    } else {
+        videoPath = "resources/gigaImages/video.mp4";
     }
     
     return videoPath;
@@ -179,8 +181,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.body.addEventListener('mouseout', function(event) {
         if (event.target.closest('.navbar-nav .nav-link video')) {
-            event.target.pause();
+            
         }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const videos = document.querySelectorAll('.navbar-nav .nav-link video');
+    videos.forEach(video => {
+        video.addEventListener('ended', function() {
+            this.currentTime = 0; // Optional: Reset the video to start
+            // Optionally pause or do other actions when the video ends
+        });
     });
 });
 
