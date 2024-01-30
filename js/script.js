@@ -21,14 +21,13 @@ function playJazz() { playGenre('jazz'); }
 function playCountry() { playGenre('country'); }
 function playPop() { playGenre('pop'); }
 
-function muteMusic() {
+function stopMusic() {
     var audioPlayer = document.getElementById('audio-element');
-    audioPlayer.volume = 0;
-    audioPlayer.currentTime = 0; // Reset the song to the beginning
-    audioPlayer.play(); // Optional: Start playing the song again
-
-    const state = loadMusicState();
-    saveMusicState({ ...state, volume: 0, currentTime: 0 });
+    if (audioPlayer) {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+        localStorage.removeItem('musicState'); // Clear the saved state
+    }
 }
 
 
@@ -126,11 +125,11 @@ function playNextSong() {
         country: ["resources/music/country1.mp3", "resources/music/country2.mp3", "resources/music/country3.mp3"],
         pop: ["resources/music/pop1.mp3", "resources/music/pop2.mp3", "resources/music/pop3.mp3"]
     };
-    
+
     var state = loadMusicState();
     if (state.genre && musicLists[state.genre]) {
         var currentIndex = musicLists[state.genre].indexOf(state.track);
-        var nextIndex = (currentIndex + 1) % musicLists[state.genre].length; // Move to the next song, or loop back to the first song
+        var nextIndex = (currentIndex + 1) % musicLists[state.genre].length;
         playGenre(state.genre, nextIndex);
     }
 }
@@ -170,3 +169,19 @@ document.addEventListener('DOMContentLoaded', function() {
         loadVideo(videoPath);
     }
 }); 
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.addEventListener('mouseover', function(event) {
+        if (event.target.closest('.navbar-nav .nav-link video')) {
+            event.target.play();
+        }
+    });
+
+    document.body.addEventListener('mouseout', function(event) {
+        if (event.target.closest('.navbar-nav .nav-link video')) {
+            event.target.pause();
+        }
+    });
+});
+
+ 
