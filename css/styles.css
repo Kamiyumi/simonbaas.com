@@ -183,18 +183,16 @@ html {
 /* Sticky header container */
 .container2 {
     display: grid;
-
-    /* Aligns the children inline */
     align-items: center;
-    /* Vertically center the items */
+    /* Vertically center the items in each grid cell */
     justify-content: center;
-    /* Distributes space between items */
-    flex-wrap: wrap;
-    /* Allows items to wrap to the next line on small screens */
+    /* Horizontally center the items in the container */
+    grid-gap: 10px;
+    /* Adjust gap between grid items */
+    /* Define your grid template, rows, and columns as needed */
 }
 
 .container2 .item {
-    flex-shrink: 1;
     white-space: nowrap;
     /* Prevent text from wrapping */
     overflow: hidden;
@@ -207,7 +205,7 @@ html {
 
 
 /* Media queries for responsive design */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .container {
         flex-direction: column;
     }
