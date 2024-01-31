@@ -191,6 +191,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        var videoPath = getVideoPath();
+        document.getElementById('videoSource').src = videoPath;
+        document.getElementById('myVideo').load(); // This is necessary to load the new video source
+    });
 
 
  
