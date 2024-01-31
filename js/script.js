@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var videoPath = getVideoPath(); // Get the dynamic video path
         var videoSource = document.getElementById('videoSource');
         
-        if (window.innerWidth > 500) {
+        if (window.innerWidth > 600) {
             videoSource.src = videoPath;
             document.getElementById('myVideo').load();
         }

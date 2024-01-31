@@ -37,22 +37,52 @@ html {
     /* Above the video */
 }
 
+.navbar-nav .nav-link.dropdown-toggle {
+    width: auto;
+    /* Maintain the original width */
+    height: auto;
+    /* Maintain the original height */
+    padding: 10px;
+    /* Or whatever padding you prefer */
+    box-sizing: border-box;
+    /* Ensures padding is included in width/height */
+}
+
+/* Additional media query for screens smaller than 500px */
+@media (max-width: 600px) {
+
+    .navbar-nav .nav-link img,
+    .navbar-nav .nav-link video {
+        width: 100%;
+        /* Makes images and videos take the full width */
+        height: 2px;
+        /* Adjusts the height automatically to maintain aspect ratio */
+    }
+
+    /* Ensuring dropdown toggle button doesn't resize on interaction */
+    .navbar-nav .nav-link.dropdown-toggle {
+        width: auto;
+        /* Prevent width adjustment */
+        height: auto;
+        /* Prevent height adjustment */
+        padding: 10px;
+        /* Maintain consistent padding */
+    }
+}
 
 
 
 .navbar {
     display: flex;
-        flex-direction: column;
-        /* Stacks nav items vertically */
+    flex-direction: column;
+    /* Stacks nav items vertically */
     max-height: auto;
     min-width: device-width;
     position: relative;
     /* or 'fixed' or 'absolute' depending on your layout */
     z-index: 1100;
-
     background-color: transparent !important;
     /* Higher than the z-index of .container2 */
-    /* ... other styles ... */
 }
 
 .navbar.center .navbar-inner {
@@ -114,25 +144,24 @@ html {
     /* Change the background color on hover */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .navbar-nav {
-        flex-direction: column;
+        flex-direction: row;
+        
+        /* Aligns nav items horizontally */
     }
 
     .nav-item {
-        padding: 0.5rem;
+        min-height: 15vw;
+        min-width: 15vw;
         /* Adjust padding to suit mobile layout */
     }
 }
 
-/* Optional: Media query for larger screens to make menu items horizontal */
-@media (min-width: 769px) {
-    .navbar-nav {
-        flex-direction: row;
-    }
 
-   
-}
+
+/* Optional: Media query for larger screens to make menu items horizontal */
+
 
 /* Image Styles */
 .image-container img {
@@ -223,7 +252,7 @@ html {
 .container2 {
     display: grid;
     align-items: center;
-    
+
     /* Vertically center the items in each grid cell */
     justify-content: center;
     /* Horizontally center the items in the container */
@@ -598,7 +627,7 @@ p1 {
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .video-container {
         height: 0%;
         /* Single column layout on smaller screens */
@@ -607,10 +636,9 @@ p1 {
 }
 
 .container2 h1 {
-    font-size: calc(18px + 1.8vw);
+    font-size: 7vh;
     /* Example: Starts at 16px and grows with the viewport width */
 }
-
 
 
 .container2 .image1,
@@ -632,7 +660,7 @@ p1 {
 
 @media (max-width: 600px) {
     .container2 h1 {
-        font-size: 2.5vw;
+        font-size: 5vh;
         /* Increases the font size a bit more for very small viewports */
     }
 
