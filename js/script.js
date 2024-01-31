@@ -133,14 +133,27 @@ function playNextSong() {
         playGenre(state.genre, nextIndex);
     }
 }
-function loadVideo(videoPath) {
-    var videoSource = document.getElementById('videoSource');
 
-    if (window.innerWidth > 500) { // Example breakpoint for mobile devices
-        videoSource.src = videoPath;
-        document.getElementById('myVideo').load();
+
+document.addEventListener('DOMContentLoaded', function() {
+    function loadVideo() {
+        var videoPath = getVideoPath(); // Get the dynamic video path
+        var videoSource = document.getElementById('videoSource');
+        
+        if (window.innerWidth > 500) {
+            videoSource.src = videoPath;
+            document.getElementById('myVideo').load();
+        }
     }
-}
+
+    // Call the function immediately to set the initial video source
+    loadVideo();
+
+    // Adjust video on window resize, if needed
+    window.addEventListener('resize', function() {
+        loadVideo();
+    });
+});
 
 function getVideoPath() {
     var videoPath = ""; // Default path, change as necessary

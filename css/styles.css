@@ -5,6 +5,7 @@ html {
     padding: 0;
     height: 100%;
 }
+
 .video-container {
     position: relative;
     width: 100%;
@@ -40,7 +41,11 @@ html {
 
 
 .navbar {
+    display: flex;
+        flex-direction: column;
+        /* Stacks nav items vertically */
     max-height: auto;
+    min-width: device-width;
     position: relative;
     /* or 'fixed' or 'absolute' depending on your layout */
     z-index: 1100;
@@ -58,7 +63,7 @@ html {
     display: inline-block;
     float: none;
     vertical-align: top;
-    
+
 }
 
 .navbar-nav .nav-link img {
@@ -71,6 +76,15 @@ html {
     width: 128x;
     height: 96px;
 
+}
+
+.navbar-nav.expanded {
+    flex-direction: row;
+    /* Aligns nav items horizontally */
+    justify-content: space-around;
+    /* Spreads items evenly */
+    width: 100%;
+    /* Takes the full width of the navbar */
 }
 
 
@@ -87,14 +101,37 @@ html {
 }
 
 .nav-item {
-    padding: 0 50px;
-    /* Adjust the padding as needed */
-    /* 0 for top and bottom, 10px for left and right */
+    flex: 1;
+    /* Gives each nav item equal space */
+    text-align: center;
+    /* Centers the text within each nav item */
+    padding: 0.5rem;
+    /* Adds some padding */
 }
 
 .nav-item:hover {
     transform: scale(1.3);
     /* Change the background color on hover */
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        padding: 0.5rem;
+        /* Adjust padding to suit mobile layout */
+    }
+}
+
+/* Optional: Media query for larger screens to make menu items horizontal */
+@media (min-width: 769px) {
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+   
 }
 
 /* Image Styles */
@@ -186,12 +223,17 @@ html {
 .container2 {
     display: grid;
     align-items: center;
+    
     /* Vertically center the items in each grid cell */
     justify-content: center;
     /* Horizontally center the items in the container */
     grid-gap: 10px;
     /* Adjust gap between grid items */
-    /* Define your grid template, rows, and columns as needed */
+    /* Responsive grid setup */
+    grid-template-columns: repeat(auto-fit, minmax(min-content, max-content));
+    /* Ensure the grid items are not stretched too thin and can shrink to their content's natural size */
+    padding: 20px;
+    /* Add some padding around the grid for better appearance */
 }
 
 .container2 .item {
@@ -207,7 +249,7 @@ html {
 
 
 /* Media queries for responsive design */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .container {
         flex-direction: column;
     }
@@ -256,14 +298,14 @@ html {
 
 
 h1 {
-    font-size: 60px;
+    font-size: 10vw;
     text-transform: uppercase;
 
     letter-spacing: -3px;
     transition: 700ms ease;
     font-variation-settings: "wght" 311;
     margin-bottom: 0.8rem;
-    color: rgb(0, 0, 0);
+    color: #90e1eb;
     outline: none;
     text-align: center;
 }
@@ -411,6 +453,12 @@ p1 {
     transform: scale3d(1.1, 1.1, 1.1);
 }
 
+.p-center {
+    text-align: center;
+
+}
+
+
 .p3 {
     font-size: 42px;
     font-family: Lucida Handwriting;
@@ -550,26 +598,20 @@ p1 {
 
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .video-container {
         height: 0%;
         /* Single column layout on smaller screens */
     }
-    
-}a
+
+}
 
 .container2 h1 {
-    font-size: calc(12px + 2.5vw);
+    font-size: calc(18px + 1.8vw);
     /* Example: Starts at 16px and grows with the viewport width */
 }
 
-/* Media query to set an upper limit for larger screens */
-@media (min-width: 920px) {
-    .container2 h1 {
-        font-size: 64px;
-        /* Sets the font size to 36px on screens wider than 768px */
-    }
-}
+
 
 .container2 .image1,
 .container2 .image2 {
@@ -590,7 +632,7 @@ p1 {
 
 @media (max-width: 600px) {
     .container2 h1 {
-        font-size: 5.5vw;
+        font-size: 2.5vw;
         /* Increases the font size a bit more for very small viewports */
     }
 
@@ -602,10 +644,12 @@ p1 {
 }
 
 @media (max-width: 800px) {
-    .container2 image1, image2 {
+
+    .container2 image1,
+    image2 {
         width: 2.5vw;
-            /* Adjust the width as necessary */
-            height: 1.9vw;
+        /* Adjust the width as necessary */
+        height: 1.9vw;
         /* Adjust the font size for smaller viewports */
     }
 }
@@ -675,9 +719,149 @@ p1 {
     /* Allows the border-bottom to fit the content width */
 }
 
-.h3-meme  
-{   font-size: 18px;
+.h3-meme {
+    font-size: 18px;
     /* Additional styles for a more stylish appearance */
     padding-left: 50px;
 }
 
+.index-container {
+    width: 100%;
+    max-width: 100vw;
+    /* 100% of the viewport width */
+
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: #777;
+    font-size: 16px;
+}
+
+.section-title h4 {
+    text-transform: capitalize;
+    font-size: 40px;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.section-title h4:before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 2px;
+    background-color: #90e1eb;
+    bottom: 0;
+    left: 50%;
+    margin-left: -30px;
+}
+
+.section-title h4:after {
+    position: absolute;
+    background-color: hsl(187,
+            69%,
+            74%);
+    content: "";
+    width: 10px;
+    height: 10px;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -5px;
+    border-radius: 50%;
+}
+
+ul.timeline-list {
+    position: relative;
+    margin: 0;
+    padding: 0
+}
+
+ul.timeline-list:before {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: #90e1eb;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+ul.timeline-list li {
+    position: relative;
+    clear: both;
+    display: table;
+}
+
+.timeline_content {
+    border: 2px solid #90e1eb;
+    background-color: #fff
+}
+
+ul.timeline-list li .timeline_content {
+    width: 45%;
+    color: #333;
+    padding: 30px;
+    float: left;
+    text-align: right;
+}
+
+ul.timeline-list li:nth-child(2n) .timeline_content {
+    float: right;
+    text-align: left;
+}
+
+.timeline_content h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+ul.timeline-list li:before {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #90e1eb;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.timeline_content span {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: poppins;
+    color: #080303;
+}
+
+@media (max-width: 768px) {
+    video {
+        display: none;
+    }
+
+    /* Show the poster image */
+    video[poster] {
+        display: block;
+        max-width: 100%;
+        /* Ensure the poster image does not exceed the container width */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+}
