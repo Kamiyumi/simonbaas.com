@@ -909,7 +909,7 @@ ul.timeline-list li:before {
     /* Center images horizontally */
     flex-wrap: wrap;
     /* Allow images to wrap to next line if needed */
-    gap: 10px;
+    gap: 70px;
     /* Optional: adds space between images */
 }
 
