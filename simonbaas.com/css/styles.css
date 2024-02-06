@@ -893,3 +893,51 @@ ul.timeline-list li:before {
         /* Maintain aspect ratio */
     }
 }
+.tech-stack-container {
+    text-align: center;
+    /* Center the title */
+    width: 100%;
+    /* Ensure the div takes full width */
+    margin: auto;
+    /* Center the div container */
+    padding-top: 20px;
+}
+
+.images-row {
+    display: flex;
+    justify-content: center;
+    /* Center images horizontally */
+    flex-wrap: wrap;
+    /* Allow images to wrap to next line if needed */
+    gap: 10px;
+    /* Optional: adds space between images */
+}
+
+.images-row img {
+    max-width: 100%;
+    /* Ensure images are responsive */
+    height: 5vh
+    /* Maintain aspect ratio */
+    /* Adjust as necessary for your layout */
+}
+
+.footer-style {
+    background-color: #f2f2f2;
+    /* Light grey background */
+    color: #000;
+    /* Black text color */
+    text-align: center;
+    /* Center the text */
+    padding: 20px 0;
+    /* 20px top and bottom padding */
+    font-size: 16px;
+    /* Font size */
+    
+}
+
+.footer-style p {
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    /* Remove default margin to ensure center alignment */
+}

@@ -65,6 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Determine the base URL dynamically
+    let baseUrl = window.location.protocol + '//' + window.location.host + '/';
+    // Adjust the path for fetching navbar.html dynamically
+    fetch(baseUrl + 'simonbaas.com/bottom.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('bottom-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading the navbar:', error);
+        });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     // For simonbaas.com/audio-bar.html, assuming it's a path from the root
     let baseUrl = window.location.protocol + '//' + window.location.host + '/';
     // Adjust the path for fetching audio-bar.html dynamically
