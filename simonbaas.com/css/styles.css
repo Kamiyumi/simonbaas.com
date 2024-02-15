@@ -1,0 +1,943 @@
+body,
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+.frosted-glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    /* Frosted glass effect */
+    z-index: 1;
+    /* Above the video */
+}
+
+.navbar-nav .nav-link.dropdown-toggle {
+    width: auto;
+    /* Maintain the original width */
+    height: auto;
+    /* Maintain the original height */
+    padding: 10px;
+    /* Or whatever padding you prefer */
+    box-sizing: border-box;
+    /* Ensures padding is included in width/height */
+}
+
+/* Additional media query for screens smaller than 500px */
+@media (max-width: 600px) {
+
+    .navbar-nav .nav-link img,
+    .navbar-nav .nav-link video {
+        width: 100%;
+        /* Makes images and videos take the full width */
+        height: 2px;
+        /* Adjusts the height automatically to maintain aspect ratio */
+    }
+
+    /* Ensuring dropdown toggle button doesn't resize on interaction */
+    .navbar-nav .nav-link.dropdown-toggle {
+        width: auto;
+        /* Prevent width adjustment */
+        height: auto;
+        /* Prevent height adjustment */
+        padding: 10px;
+        /* Maintain consistent padding */
+    }
+}
+
+
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    /* Stacks nav items vertically */
+    max-height: auto;
+    min-width: device-width;
+    position: relative;
+    /* or 'fixed' or 'absolute' depending on your layout */
+    z-index: 1100;
+    background-color: transparent !important;
+    /* Higher than the z-index of .container2 */
+}
+
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+
+}
+
+.navbar-nav .nav-link img {
+    width: 50px;
+    height: 50px;
+
+}
+
+.navbar-nav .nav-link video {
+    width: 128x;
+    height: 96px;
+
+}
+
+.navbar-nav.expanded {
+    flex-direction: row;
+    /* Aligns nav items horizontally */
+    justify-content: space-around;
+    /* Spreads items evenly */
+    width: 100%;
+    /* Takes the full width of the navbar */
+}
+
+
+
+.image-container {
+    width: 200px;
+    /* Fixed width, adjust as needed */
+    height: 200px;
+    /* Fixed height, same as width for quadratic shape */
+    margin: auto;
+    /* Centers the container */
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item {
+    flex: 1;
+    /* Gives each nav item equal space */
+    text-align: center;
+    /* Centers the text within each nav item */
+    padding: 0.5rem;
+    /* Adds some padding */
+}
+
+.nav-item:hover {
+    transform: scale(1.3);
+    /* Change the background color on hover */
+}
+
+@media (max-width: 700px) {
+    .navbar-nav {
+        flex-direction: row;
+        
+        /* Aligns nav items horizontally */
+    }
+
+    .nav-item {
+        min-height: 15vw;
+        min-width: 15vw;
+        /* Adjust padding to suit mobile layout */
+    }
+}
+
+
+
+/* Optional: Media query for larger screens to make menu items horizontal */
+
+
+/* Image Styles */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container without distortion */
+}
+
+/* General image container styles for responsiveness */
+.image-container,
+.image-container2,
+.image-container-add-person,
+
+.image-container-add-money {
+    width: 80vw;
+    /* Adjust the width in viewport width units */
+    max-width: 768px;
+    /* Keep the max-width if you want a limit */
+    height: auto;
+    /* Make the height automatic based on content */
+    margin: auto;
+    /* This should center the container */
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container-viking-express {
+    width: 80vw;
+    /* Adjust the width in viewport width units */
+    max-width: 600px;
+    /* Keep the max-width if you want a limit */
+    height: auto;
+    /* Make the height automatic based on content */
+    margin: auto;
+    /* This should center the container */
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container-viking-express img {
+    padding-top: auto;
+    width: 100%;
+    /* Full width of the container */
+    height: auto;
+    /* Height will adjust automatically */
+    object-fit: contain;
+
+    padding-bottom: 2vh;
+    /* Keeps the image fully visible */
+}
+
+/* General image styles for responsiveness */
+.image-container img,
+.image-container2 img,
+.image-container-add-person img,
+.image-container-add-money img {
+    width: 100%;
+    /* Full width of the container */
+    height: auto;
+    /* Height will adjust automatically */
+    object-fit: contain;
+    /* Keeps the image fully visible */
+}
+
+/* Container for main content */
+.container {
+    display: flex;
+    flex-direction: row;
+    /* Aligns children in a row */
+    justify-content: center;
+    /* Centers children horizontally in the container */
+    align-items: flex-start;
+    /* Aligns children at the start of the container vertically */
+    flex-wrap: wrap;
+    /* Allows items to wrap as needed */
+}
+
+/* Styles for individual columns */
+.column {
+    flex: 1;
+    /* Each column takes up equal space */
+    padding: 10px;
+    /* Some padding around the content */
+}
+
+/* Sticky header container */
+.container2 {
+    display: grid;
+    align-items: center;
+
+    /* Vertically center the items in each grid cell */
+    justify-content: center;
+    /* Horizontally center the items in the container */
+    grid-gap: 10px;
+    /* Adjust gap between grid items */
+    /* Responsive grid setup */
+    grid-template-columns: repeat(auto-fit, minmax(min-content, max-content));
+    /* Ensure the grid items are not stretched too thin and can shrink to their content's natural size */
+    padding: 20px;
+    /* Add some padding around the grid for better appearance */
+}
+
+.container2 .item {
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    overflow: hidden;
+    /* Hide overflow */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflowed text */
+    /* Other styling as needed */
+}
+
+
+
+/* Media queries for responsive design */
+@media (max-width: 500px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .viking-container {
+        width: 30%;
+        flex-direction: column;
+        /* Full width on smaller screens */
+    }
+
+    .viking-container-img {
+        flex: 1;
+        max-width: 768px;
+        height: auto;
+    }
+
+    .column,
+    .column-img,
+    .column-text {
+        width: 100%;
+        /* Full width on smaller screens */
+    }
+
+    .image-container,
+    .image-container2,
+    .image-container-add-person,
+    .image-container-add-money {
+        width: 90vw;
+        /* Adjust for smaller screens */
+        max-width: 100%;
+        /* Allows the image container to fill the width of the screen */
+    }
+}
+
+
+
+.container2 {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    /* Or any color that fits your design */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Optional, for a subtle shadow */
+}
+
+
+h1 {
+    font-size: 10vw;
+    text-transform: uppercase;
+
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 0.8rem;
+    color: #90e1eb;
+    outline: none;
+    text-align: center;
+}
+
+h1:hover {
+    font-variation-settings: "wght" 582;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 150%;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    letter-spacing: .5px;
+}
+
+
+.image-container2 {
+    position: relative;
+    display: inline-table
+        /* images inside the same size */
+
+}
+
+.image-container2 img {
+    display: block;
+    width: 500px;
+    height: auto;
+}
+
+.image-container-add-person {
+    width: 40vh;
+    height: 40vh;
+    margin: auto;
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.image-container-add-person img {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container-add-person .overlay-text {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.696);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container-add-person:hover .overlay-text {
+    opacity: 1;
+}
+
+.image-container-add-money {
+    width: auto;
+    height: auto;
+    margin: auto;
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.image-container-add-money img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container-add-money .overlay-text {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding: top 50px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.696);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container-add-money:hover .overlay-text {
+    opacity: 1;
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    /* Set the width to cover the entire parent container (image) */
+    height: 100%;
+    /* Set the height to cover the entire parent container (image) */
+    background-color: rgba(0, 0, 0, 0.696);
+    color: white;
+
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container2:hover .overlay-text {
+    opacity: 1;
+}
+
+p1 {
+
+    font-size: 42px;
+    font-family: Lucida Handwriting;
+}
+
+.p2 {
+    transition: all 0.7s ease;
+}
+
+.p2:hover {
+    color: rgb(126, 66, 66);
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.p-center {
+    text-align: center;
+
+}
+
+
+.p3 {
+    font-size: 42px;
+    font-family: Lucida Handwriting;
+    transition: all 1s ease;
+}
+
+.p3:hover {
+    color: rgb(126, 66, 66);
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+/* Responsive and Max Size Image Container */
+/* Responsive and Max Size Image Container */
+.image-container {
+    max-width: 500px;
+    /* Maximum width of the image */
+    max-height: 500px;
+    /* Maximum height of the image */
+    width: 100%;
+    /* Percentage width for responsiveness */
+    height: auto;
+    /* Height is automatic to maintain aspect ratio */
+    margin: auto;
+    /* Center the container */
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container-index {
+    display: block;
+    /* Change from flex to block for better control */
+    max-width: 768px;
+    /* Maximum width of the container */
+    margin: auto;
+    /* Center the container */
+    overflow: hidden;
+    /* Hide any overflowing parts */
+}
+
+.image-container-index img {
+    width: 100%;
+    /* Force the image to scale with its container */
+    height: auto;
+    /* Keep the height auto to maintain aspect ratio */
+    object-fit: contain;
+    /* Ensures the image is fully visible */
+}
+
+/* Responsive Image Styles */
+.image-container img {
+    max-width: 100%;
+    /* Image can grow up to 100% of its container */
+    max-height: 100%;
+    /* Image can grow up to 100% of its container */
+    width: auto;
+    /* Width is automatic to maintain aspect ratio */
+    height: auto;
+    /* Height is automatic to maintain aspect ratio */
+    object-fit: contain;
+    /* Ensures the image is fully visible and maintains its aspect ratio */
+}
+
+/* Container for Experience Images */
+.experience-container {
+    width: 250px;
+    /* Fixed width of the container */
+    height: 250px;
+    /* Fixed height of the container */
+    margin: auto;
+    /* Center the container */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    /* Flexbox to center the image */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+/* Styles for Experience Images */
+.experience-container img {
+    max-width: 250px;
+    /* Maximum width of the image */
+    max-height: 250px;
+    /* Maximum height of the image */
+    width: auto;
+    /* Width is automatic to maintain aspect ratio */
+    height: auto;
+    /* Height is automatic to maintain aspect ratio */
+    object-fit: contain;
+    /* Ensures the image is fully visible and maintains its aspect ratio */
+
+
+}
+
+.experience-container :hover {
+    transform: scale(1.05);
+}
+
+.viking-container {
+    width: auto;
+    /* Fixed width of the container */
+    height: auto;
+    /* Fixed height of the container */
+    margin: auto;
+    /* Center the container */
+    position: relative;
+    overflow: hidden;
+    /* Flexbox to center the image */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+
+}
+
+/* Styles for Experience Images */
+.viking-container img {
+    padding-top: 20px;
+    padding-left: 50px;
+    max-width: 500px;
+    /* Maximum width of the image */
+    max-height: auto;
+    /* Maximum height of the image */
+    width: auto;
+    /* Width is automatic to maintain aspect ratio */
+    height: auto;
+    /* Height is automatic to maintain aspect ratio */
+    margin: auto;
+    justify-content: center;
+    object-fit: contain;
+    /* Ensures the image is fully visible and maintains its aspect ratio */
+
+
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .video-container {
+        height: 0%;
+        /* Single column layout on smaller screens */
+    }
+
+}
+
+.container2 h1 {
+    font-size: 7vh;
+    /* Example: Starts at 16px and grows with the viewport width */
+}
+
+
+.container2 .image1,
+.container2 .image2 {
+    max-width: 100%;
+    /* Allows the image to be responsive and scale down */
+    max-height: 100px;
+    /* Sets a maximum height */
+    height: auto;
+    /* Maintains the aspect ratio */
+    width: auto;
+    /* Allows the width to be responsive and scale down */
+    position: relative;
+    /* Keeps the position relative */
+    padding-top: 0;
+    /* Adjust padding-top if necessary, negative values are not valid */
+    /* You can use margin-top with negative values if you want to move images up */
+}
+
+@media (max-width: 600px) {
+    .container2 h1 {
+        font-size: 5vh;
+        /* Increases the font size a bit more for very small viewports */
+    }
+
+    .container2 .image1,
+    .container2 .image2 {
+        max-height: 75px;
+        /* Optionally adjust max-height for smaller viewports */
+    }
+}
+
+@media (max-width: 800px) {
+
+    .container2 image1,
+    image2 {
+        width: 2.5vw;
+        /* Adjust the width as necessary */
+        height: 1.9vw;
+        /* Adjust the font size for smaller viewports */
+    }
+}
+
+.container2 .image1 {
+    margin-right: -20px;
+    margin-left: 5px;
+    /* Adds space between the two images */
+}
+
+.container2 .image3,
+.container2 .image4 {
+    position: relative;
+    margin-bottom: auto;
+    /* add spacing between the images */
+    /* Allows for individual positioning */
+    top: -10px;
+
+
+}
+
+.viking-container {
+    position: relative;
+    /* Other styles as needed */
+}
+
+.viking-container .overlay-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.696);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* To indicate clickable */
+}
+
+.viking-container:hover .overlay-text {
+    opacity: 1;
+}
+
+.h3-stylish {
+    font-size: 24px;
+    /* Additional styles for a more stylish appearance */
+    font-weight: bold;
+    color: #333;
+    /* Dark grey text color */
+    text-transform: uppercase;
+    /* Make the text uppercase for more style */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    /* subtle shadow for depth */
+    margin-bottom: 20px;
+    /* Space below the header */
+    padding: 10px;
+    /* Padding around the text */
+    border-bottom: 2px solid #555;
+    /* A solid line under the text for emphasis */
+    display: inline-block;
+    /* Allows the border-bottom to fit the content width */
+}
+
+.h3-meme {
+    font-size: 18px;
+    /* Additional styles for a more stylish appearance */
+    padding-left: 50px;
+}
+
+.index-container {
+    width: 100%;
+    max-width: 100vw;
+    /* 100% of the viewport width */
+
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: #777;
+    font-size: 16px;
+}
+
+.section-title h4 {
+    text-transform: capitalize;
+    font-size: 40px;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.section-title h4:before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 2px;
+    background-color: #90e1eb;
+    bottom: 0;
+    left: 50%;
+    margin-left: -30px;
+}
+
+.section-title h4:after {
+    position: absolute;
+    background-color: hsl(187,
+            69%,
+            74%);
+    content: "";
+    width: 10px;
+    height: 10px;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -5px;
+    border-radius: 50%;
+}
+
+ul.timeline-list {
+    position: relative;
+    margin: 0;
+    padding: 0
+}
+
+ul.timeline-list:before {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: #90e1eb;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+ul.timeline-list li {
+    position: relative;
+    clear: both;
+    display: table;
+}
+
+.timeline_content {
+    border: 2px solid #90e1eb;
+    background-color: #fff
+}
+
+ul.timeline-list li .timeline_content {
+    width: 45%;
+    color: #333;
+    padding: 30px;
+    float: left;
+    text-align: right;
+}
+
+ul.timeline-list li:nth-child(2n) .timeline_content {
+    float: right;
+    text-align: left;
+}
+
+.timeline_content h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+ul.timeline-list li:before {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #90e1eb;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.timeline_content span {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: poppins;
+    color: #080303;
+}
+
+@media (max-width: 768px) {
+    video {
+        display: none;
+    }
+
+    /* Show the poster image */
+    video[poster] {
+        display: block;
+        max-width: 100%;
+        /* Ensure the poster image does not exceed the container width */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+}
+.tech-stack-container {
+    text-align: center;
+    /* Center the title */
+    width: 100%;
+    /* Ensure the div takes full width */
+    margin: auto;
+    /* Center the div container */
+    padding-top: 20px;
+}
+
+.images-row {
+    display: flex;
+    justify-content: center;
+    /* Center images horizontally */
+    flex-wrap: wrap;
+    /* Allow images to wrap to next line if needed */
+    gap: 70px;
+    /* Optional: adds space between images */
+}
+
+.images-row img {
+    max-width: 100%;
+    /* Ensure images are responsive */
+    height: 5vh
+    /* Maintain aspect ratio */
+    /* Adjust as necessary for your layout */
+}
+
+.footer-style {
+    background-color: #f2f2f2;
+    /* Light grey background */
+    color: #000;
+    /* Black text color */
+    text-align: center;
+    /* Center the text */
+    padding: 20px 0;
+    /* 20px top and bottom padding */
+    font-size: 16px;
+    /* Font size */
+    
+}
+
+.footer-style p {
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    /* Remove default margin to ensure center alignment */
+}

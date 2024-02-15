@@ -1,0 +1,54 @@
+How do videogames work:
+    A ton of images playing after eachother (frames)
+    Takes the same approach as movies.
+    24 frames for movies.
+    Diffrrence is the images and the sequences
+    Lots of individual images played
+
+    Movies: Fixed
+    Games: Dynamic and generated while game is running
+        > Position of enemies
+        > Player movement
+        > Health mechanics
+    
+    Movie: No input
+    
+    Games:
+        > Constant check of player input to update frame
+    
+1. Checking Player input (Event loop)
+
+2. Use that information to place the elements on the screen
+    > Creates <1 FRAME/Image>
+    > Repeated 30-120 times /second
+    > Applies to 2D and 3D Games
+
+PyGame:
+    > Key functionalities:
+    ---------------------------
+        > Helps you draw images
+        > Plays sound
+        > Checks player input
+        > In .py checking input() stops the code
+        > Other gamedev ools like:
+            > Collisions
+            > Creating text
+            > timers
+    > Bad news:
+        > Cannot create AAA Games
+        > Would have to use Unity, UE5, Godot
+        > No GUI
+
+Why PyGame > Traditional game engine:
+    ------------------------------
+    > Useful to learn how to code
+    > Solve problems yourself and become a good programmer in general
+    > Quickly learn a new game engine or other tools
+    > Easier to learn new engines if you are a good programmer
+
+Surface:
+    > Display Surface
+        > The game window
+        > Anything displayed goes on here
+    > Surface
+        > A single image, something imported, rendered text or a plain color
