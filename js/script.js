@@ -47,10 +47,6 @@ function downloadCv() {
     document.body.removeChild(link); // Remove the link after clicking
 }
 
-function contactInformation()
-{
-    alert("Contact Information: \n Email: Simon.baas94@gmail.com \n #: 0704208562");
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('resources/navbar.html')
