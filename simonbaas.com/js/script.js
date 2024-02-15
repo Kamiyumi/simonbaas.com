@@ -38,8 +38,8 @@ function stopMusic() {
 
 function downloadCv() {
     var link = document.createElement('a');
-    link.href = 'simonbaas.com/resources/gigaImages/c.pdf'; // Correct path to the PDF
-    link.download = 'SimonBaasCV.pdf';
+    link.href = 'simonbaas.com/resources/gigaImages/CV.pdf'; // Correct path to the PDF
+    link.download = 'CV.pdf';
     document.body.appendChild(link); // Append to body
     link.click(); // Trigger the click
     document.body.removeChild(link); // Remove the link after clicking
