@@ -745,8 +745,8 @@ section .container {
 }
 
 .icon-box .icon-small-grid .icon-small {
-  width: 45px;
-  height: 45px;
+  width: 65px;
+  height: 65px;
   background: #f0f0f000;
   border-radius: 5px;
   display: flex;
@@ -756,12 +756,12 @@ section .container {
 }
 
 .icon-box .icon-small-grid .icon-small:hover {
-  background: #18d26e;
+  background: #dbe3df;
 }
 
 .icon-box .icon-small-grid .icon-small img {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 60px;
+  max-height: 60px;
 }
 
 
