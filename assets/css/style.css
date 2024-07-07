@@ -738,21 +738,22 @@ section .container {
 }
 
 .icon-box .icon-small-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
 }
 
 .icon-box .icon-small-grid .icon-small {
-  width: 65px;
-  height: 65px;
-  background: #f0f0f000;
+  width: 75px;
+  height: 75px;
+  background: transparent;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .icon-box .icon-small-grid .icon-small:hover {
@@ -760,9 +761,12 @@ section .container {
 }
 
 .icon-box .icon-small-grid .icon-small img {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 70px;
+  max-height: 70px;
+  object-fit: contain;
 }
+
+
 
 
 
