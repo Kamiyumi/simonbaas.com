@@ -158,6 +158,9 @@ h6 {
   }
 }
 
+
+
+
 /* Header Top */
 #header.header-top {
   height: 80px;
@@ -219,6 +222,13 @@ h6 {
   display: flex;
   list-style: none;
   align-items: center;
+}
+
+@media (max-width: 991px) {
+  .navbar ul {
+    display: flex;
+    
+  }
 }
 
 .navbar li {
@@ -309,7 +319,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.502);
   transition: 0.3s;
   z-index: 999;
   margin-top: 0;
@@ -335,6 +345,7 @@ h6 {
 }
 
 .navbar-mobile li {
+  display: block;
   padding: 12px 20px;
 }
 
