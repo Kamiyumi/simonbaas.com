@@ -166,18 +166,22 @@ h6 {
     line-height: 30px;
   }
 
-  #header .social-links {
-    margin-top: 15px;
-  }
-
   #header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+  #header .social-links {
+    margin-top: 15px;
+    justify-content: center; /* ADD THIS */
+  }
+
+  #header .social-links a {
+    align-items: center;
+    margin-right: 0;         /* REMOVE spacing on single icon */
+  }
 }
-
-
 
 
 /* Header Top */
@@ -1256,6 +1260,73 @@ section .container {
   .container {
     padding-left: 10px;
     
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.intro-text {
+  flex: 1 1 50%;
+}
+
+.intro-image {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.header-img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #000000;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-text,
+  .intro-image {
+    flex: 1 1 100%;
+  }
+
+  .header-img {
+    width: 75%;
+    max-width: 300px;
+  }
+}
+
+#header.header-top .intro-image {
+  display: none !important;
+}
+
+@media (min-width: 769px) and (max-width: 1411px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-text,
+  .intro-image {
+    flex: 1 1 100%;
+  }
+
+  .header-img {
+    max-width: 300px;
+    width: 80%;
+    height: 50%;
   }
 }
 
